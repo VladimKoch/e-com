@@ -22,25 +22,25 @@
                 </div>
 
                 <div class="row">
+
+
                     <?php
-
+                    // Query Select from DB
                     $query="SELECT * from products";
-
                     $products = $conn -> query($query);
-
                     ?>
                     <?php if(!$product = "") : ?>
                     <?php while($row = $products -> fetch_assoc()): ?>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="<?php echo $row['product_image'];?>" alt="">
+                           <a href="item.php?id=<?php echo $row['product_id'];?>"><img src="<?php echo $row['product_image'];?>" alt=""></a>
                             <div class="caption">
-                                <h4 class="pull-right"><?php echo $row['product_price'];?></h4>
+                                <h4 class="pull-right">&#36;<?php echo $row['product_price'];?></h4>
                                 <h4><a href="#"><?php echo $row['product_title']?></a>
                                 </h4>
                                 <p><?php echo $row['product_description']?></p>
                             </div>
-                            <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                            <a class="btn btn-primary" target="_blank" href="item.php?id=<?php echo $row['product_id'];?>">Add to cart</a>
                             <div class="ratings">
                                 <p class="pull-right">18 reviews</p>
                                 <p>

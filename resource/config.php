@@ -16,7 +16,7 @@ defined("RESOURCE") ? null : define("RESOURCE", __DIR__ . DS );
 
 // DB constants
 defined("DB_HOST") ? null : define("DB_HOST", "localhost");
-defined("DB__USER") ? null : define("DB_USER", "Vlada89");
+defined("DB_USER") ? null : define("DB_USER", "Vlada89");
 defined("DB_PASS") ? null : define("DB_PASS", "Tyr2017");
 defined("DB_NAME") ? null : define("DB_NAME", "ecom_db");
 
@@ -44,6 +44,7 @@ $products = "CREATE TABLE IF NOT EXISTS products(
     product_category_id INT(11) NOT NULL,
     product_price FLOAT(11) NOT NULL,
     product_description TEXT NOT NULL,
+    short_desc TEXT NOT NULL,
     product_image VARCHAR(255) NOT NULL)";
 
     $conn_products = $conn -> query($products);
